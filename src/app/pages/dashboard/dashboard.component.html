@@ -1,0 +1,262 @@
+<div class="dashboard mt-[40px] max-sm:bg-white bg-[#FAFAFA]">
+  <div class="max-sm:max-w-[80%] container">
+    <div class="dashboard-inner w-full grid  justify-between grid-cols-1 lg:grid-cols-[1fr_372px] grid-rows-1 gap-[32px]">
+      <ng-container *ngIf="isLoading">
+        <div class="left-side w-full">
+          <div class="text w-1/2 flex flex-col gap-2">
+            <div class="skeleton w-full h-[30px] bg-skeleton-dark"></div>
+            <div class="skeleton w-full h-[30px] bg-skeleton-light"></div>
+          </div>
+
+          <div class="patient-activity w-full flex flex-wrap items-center justify-between gap-y-4">
+            <div class="patient xl:w-[45%] mt-8 rounded-lg w-full h-[124px] bg-[#141522] text-white flex items-center justify-around">
+              <div class="block">
+                <div class="skeleton w-[100px] h-[25px] bg-skeleton-dark"></div>
+                <div class="skeleton w-[80px] h-[25px] bg-skeleton-light"></div>
+              </div>
+
+              <div class="block skeleton w-[80px] h-[80px] rounded-full bg-skeleton-dark"></div>
+
+              <div class="block">
+                <div class="skeleton w-[30px] h-[30px] bg-skeleton-dark"></div>
+                <div class="skeleton w-[30px] h-[30px] bg-skeleton-light"></div>
+              </div>
+            </div>
+
+            <div class="activity xl:w-[50%] w-full max-sm:bg-[#F5F5F7] p-[20px]">
+              <div class="text flex items-center justify-between">
+                <div class="skeleton w-[55px] h-[25px] text-skeleton-dark"></div>
+                <div class="skeleton w-[55px] h-[25px] text-skeleton-light"></div>
+              </div>
+
+              <div class="chart w-full h-[130px] mt-4 rounded-lg bg-skeleton-dark">
+
+              </div>
+            </div>
+          </div>
+
+          <div class="mentors mt-[32px] mb-[20px]">
+            <div class="title flex items-center justify-between">
+              <div class="skeleton w-[60%] h-[30px] bg-skeleton-dark"></div>
+              <div class="skeleton w-[30%] h-[30px] bg-skeleton-light"></div>
+            </div>
+
+            <div class="box">
+              <div class="top h-[60px] flex items center justify-between">
+                <div class="person flex items-center gap-1">
+                  <div class="skeleton w-[48px] h-[48px] bg-skeleton-dark"></div>
+                  <div class="text flex flex-col items-center gap-[2px]">
+                    <div class="skeleton w-1/2 h-[20px] bg-skeleton-dark"></div>
+                    <div class="skeleton w-1/4 h-[20px] bg-skeleton-dark"></div>
+                  </div>
+                </div>
+                <div class="skeleton w-1/4 h-[20px] bg-skeleton-light"></div>
+              </div>
+
+              <div class="bottom flex items-center justify-between">
+                <div class="skeleton w-1/4 h-[20px] bg-skeleton-light"></div>
+                <div class="skeleton w-2/4 h-[20px] bg-skeleton-light"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Upcoming-Task my-[32px] flex flex-wrap justify-between">
+            <div class="title w-full flex items-center justify-between">
+              <h2 class="text-semiBold-20 font-semibold">Upcoming Task</h2>
+            </div>
+
+            <div class="box max-sm:full w-[45%] p-[20px] bg-white flex flex-col gap-[16px]">
+              <div class="skeleton w-full h-[110px] rounded-[10px] bg-skeleton-dark"></div>
+
+              <div class="content flex flex-col gap-[16px]">
+                <div class="semi-title flex flex-col gap-[5px]">
+                  <h3 class="skeleton bg-skeleton-dark w-2/5 h-[20px]"></h3>
+                  <p class="skeleton bg-skeleton-light w-2/5 h-[20px]"></p>
+                </div>
+                <div class="skeleton w-full h-[30px] bg-skeleton-dark"> </div>
+
+                <div class="time flex items-center justify-between">
+                  <p class="skeleton w-2/5 h-[20px] bg-skeleton-dark"></p>
+                  <div class="skeleton w-2/5 h-[20px] bg-skeleton-light">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box max-sm:hidden w-[45%] p-[20px] bg-white flex flex-col gap-[16px]">
+              <div class="skeleton w-full h-[110px] rounded-[10px] bg-skeleton-dark"></div>
+
+              <div class="content flex flex-col gap-[16px]">
+                <div class="semi-title flex flex-col gap-[5px]">
+                  <h3 class="skeleton bg-skeleton-dark w-2/5 h-[20px]"></h3>
+                  <p class="skeleton bg-skeleton-light w-2/5 h-[20px]"></p>
+                </div>
+                <div class="skeleton w-full h-[30px] bg-skeleton-dark"> </div>
+
+                <div class="time flex items-center justify-between">
+                  <p class="skeleton w-2/5 h-[20px] bg-skeleton-dark"></p>
+                  <div class="skeleton w-2/5 h-[20px] bg-skeleton-light">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-side w-full h-full">
+
+        </div>
+
+      </ng-container>
+
+      <ng-container *ngIf="!isLoading">
+
+        <div class="left-side w-full">
+          <div class="text">
+            <h1 class="text-3xl">Hi, Skylar Dias</h1>
+            <p>Let's finish your task today!</p>
+          </div>
+
+          <div class="patient-activity w-full flex flex-wrap items-center justify-between gap-4">
+            <div class="patient xl:w-[45%] mt-8 rounded-lg w-full h-[124px] bg-[#141522] text-white flex items-center justify-around">
+              <div class="block">
+                <h3 class="text-semiBold-16 font-semibold">Running Task</h3>
+                <h1 class="text-semiBold-32 font-semibold">65</h1>
+              </div>
+
+              <div
+                class="radial-progress text-xl text-[#546FFF]"
+                [attr.style]="'--value:' + radialProgressNum + '; --size:5rem; --thickness:2px;'"
+                [attr.aria-valuenow]="radialProgressNum"
+                role="progressbar"
+              >
+                {{ radialProgressNum }}%
+              </div>
+
+              <div class="block">
+                <h4 class="text-semiBold-20 font-semibold">100</h4>
+                <p class="text-medium-14 text-[#8E92BC]">Task</p>
+              </div>
+            </div>
+
+            <div class="activity xl:w-[50%] w-full max-sm:bg-[#F5F5F7] p-[20px]">
+              <div class="text flex items-center justify-between">
+                <h4 class="text-semibold-16 font-semibold">Activity</h4>
+                <p class="text-medium-12">This Week </p>
+              </div>
+
+              <div class="chart w-full h-[130px] bg-white mt-4 rounded-lg">
+
+              </div>
+            </div>
+          </div>
+
+          <div class="mentors mt-[32px] flex flex-wrap gap-[20px] justify-between">
+            <h2 class="text-semiBold-20 font-semibold mb-[20px] w-full">Monthly Mentors</h2>
+            <div class="mentor w-full xl:w-[45%]">
+
+              <div class="box">
+                <div class="top flex justify-between items-center">
+                  <div class="person flex items-center gap-2">
+                    <div class="img bg-red-500 w-[48px] h-[48px] rounded-full"></div>
+                    <div class="text flex flex-col gap-[2px]">
+                      <h4 class="text-semiBold-16 font-semibold">Curious George</h4>
+                      <p class="text-[#54577A]">UI UX Design</p>
+                    </div>
+                  </div>
+                  <a href="#" class="text-semiBold-14 font-semibold text-[#546FFF]">+ Follow</a>
+                </div>
+                <div class="bottom flex items-center justify-between mt-[10px]">
+                  <p>40 Task</p>
+                  <p>4,7  (750 Reviews)</p>
+                </div>
+              </div>
+            </div>
+            <div class="mentor max-sm:hidden w-full xl:w-[45%]">
+
+              <div class="box">
+                <div class="top flex justify-between items-center">
+                  <div class="person flex items-center gap-2">
+                    <div class="img bg-red-500 w-[48px] h-[48px] rounded-full"></div>
+                    <div class="text flex flex-col gap-[2px]">
+                      <h4 class="text-semiBold-16 font-semibold">Curious George</h4>
+                      <p class="text-[#54577A]">UI UX Design</p>
+                    </div>
+                  </div>
+                  <a href="#" class="text-semiBold-14 font-semibold text-[#546FFF]">+ Follow</a>
+                </div>
+                <div class="bottom flex items-center justify-between mt-[10px]">
+                  <p>40 Task</p>
+                  <p>4,7  (750 Reviews)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Upcoming-Task my-[32px] flex flex-wrap justify-between">
+            <div class="title w-full flex items-center justify-between">
+              <h2 class="text-semiBold-20 font-semibold">Upcoming Task</h2>
+            </div>
+
+            <div class="box max-sm:w-full w-[45%] p-[20px] bg-white flex flex-col gap-[16px]">
+              <div class="img w-full h-[110px] rounded-[10px] bg-red-500"></div>
+
+              <div class="content flex flex-col gap-[16px]">
+                <div class="semi-title">
+                  <h3 class="text-semiBold-16 font-semibold">Creating Mobile App Design</h3>
+                  <p class="text-[#54577A] text-medium-12">UI UX Design</p>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-title flex items-center justify-between">
+                    <h5 class="text-semiBold-14 font-semibold">Progress</h5>
+                    <p class="text-[#546FFF] text-medium-12">75%</p>
+                  </div>
+                  <progress class="progress progress-info w-full" value="75" max="100"></progress>
+                </div>
+
+                <div class="time flex items-center justify-between">
+                  <p class="text-medium-16 font-semibold">3 Days Left</p>
+                  <div class="people flex">
+                    <div class="box w-[24px] h-[24px] rounded-full bg-red-500 border-white border-2 ml-0"></div>
+                    <div class="box w-[24px] h-[24px] rounded-full bg-red-500 border-white border-2 ml-[-10px]"></div>
+                    <div class="box w-[24px] h-[24px] rounded-full bg-red-500 border-white border-2 ml-[-10px]"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box max-sm:hidden w-[45%] p-[20px] bg-white flex flex-col gap-[16px]">
+              <div class="img w-full h-[110px] rounded-[10px] bg-red-500"></div>
+
+              <div class="content flex flex-col gap-[16px]">
+                <div class="semi-title">
+                  <h3 class="text-semiBold-16 font-semibold">Creating Mobile App Design</h3>
+                  <p class="text-[#54577A] text-medium-12">UI UX Design</p>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-title flex items-center justify-between">
+                    <h5 class="text-semiBold-14 font-semibold">Progress</h5>
+                    <p class="text-[#546FFF] text-medium-12">75%</p>
+                  </div>
+                  <progress class="progress progress-info w-full" value="75" max="100"></progress>
+                </div>
+
+                <div class="time flex items-center justify-between">
+                  <p class="text-medium-16 font-semibold">3 Days Left</p>
+                  <div class="people flex">
+                    <div class="box w-[24px] h-[24px] rounded-full bg-red-500 border-white border-2 ml-0"></div>
+                    <div class="box w-[24px] h-[24px] rounded-full bg-red-500 border-white border-2 ml-[-10px]"></div>
+                    <div class="box w-[24px] h-[24px] rounded-full bg-red-500 border-white border-2 ml-[-10px]"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-side w-full h-full">
+
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+</div>

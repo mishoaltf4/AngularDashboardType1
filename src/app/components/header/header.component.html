@@ -1,0 +1,13 @@
+<header class="h-[108px] border-b-1 max-sm:bg-white">
+  <div class="container max-sm:max-w-[80%]">
+    <div class="header-inner h-[108px] flex items-center justify-end gap-4">
+      <div class="circle max-sm:h-[44px] max-sm:w-[44px] h-[54px] w-[54px] border-2 rounded-full flex justify-center items-center">
+        <fa-icon [icon]="faBellConcierge" size="2x" class="skeleton text-skeleton-dark" *ngIf="isLoading" />
+
+        <fa-icon [icon]="faBell" size="2x" *ngIf="!isLoading" />
+
+      </div>
+      <div class="circle max-sm:h-[44px] max-sm:w-[44px] h-[54px] w-[54px] border-2 rounded-full flex justify-center items-center"></div>
+    </div>
+  </div>
+</header>

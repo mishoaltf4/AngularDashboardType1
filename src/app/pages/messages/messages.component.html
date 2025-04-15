@@ -1,0 +1,39 @@
+<div class="messages py-6">
+  <div class="container">
+    <div class="messages-inner px-6 2xl:flex">
+      <div class="left-side 2xl:px-6 2xl:w-100 2xl:dark:bg-dark-component">
+        <input type="text"
+               placeholder="search name..."
+               class="w-full h-13 border border-[#F5F5F7] dark:border-[#333c49] rounded-[10px] px-7 placeholder:[#54577A] dark:placeholder:text-white text-medium-18 text-[#54577A] dark:text-white">
+        <div class="people flex flex-col w-full h-full mt-12 gap-8">
+          <div class="person px-5 py-2 flex items-center justify-between bg-[#FAFAFA] dark:bg-dark-theme rounded-[10px]"
+               *ngFor="let mentor of combinedData">
+            <div class="info flex items-center gap-3">
+              <img src="/3.png" alt="" width="48px" height="48px" class="rounded-full">
+              <div class="flex flex-col gap-1">
+                <h3 class="text-semiBold-14 font-semibold">{{ mentor.name }}</h3>
+                <p class="text-medium-12" [ngClass]="!mentor.isAnsweredBack ? 'font-semibold': 'text-[#8E92BC]'"><span *ngIf="mentor.isAnsweredBack">You: </span>{{mentor.message}}</p>
+              </div>
+            </div>
+
+            <div class="right flex flex-col items-end gap-3">
+              <p class="text-medium-12 text-[#8E92BC]">1 m ago</p>
+              <div class="flex" *ngIf="mentor.isAnsweredBack; else elseBlock">
+                <fa-icon [icon]="faCheck" class="text-blue-500"/>
+                <fa-icon [icon]="faCheck" [ngClass]="mentor.isSeen ? 'text-blue-500' : 'text-gray-500'" class="ml-[-10px]"/>
+              </div>
+              <ng-template #elseBlock>
+                <div class="circle w-2 h-2 bg-red-500 rounded-full"></div>
+              </ng-template>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <ng-container *ngIf="windowSize > 1100">
+        <app-chat class="w-[780px]"/>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<div class="mentors w-full h-full max-sm:p-8">
+  <div class="container">
+    <div class="mentors-inner py-5">
+      <div class="recent-mentors h-full">
+        <div class="title flex items-center justify-between">
+          <h1 class="text-semiBold-20 font-semibold">Recent Mentors</h1>
+          <div class="btns flex gap-4">
+            <button class="text-semiBold-24 font-semibold"
+                    [ngClass]="{'text-[#54577A]' : this.scrolingCount === 0}"
+                    (click)="scrollLeft()"
+            ><</button>
+            <button class="text-semiBold-24 font-semibold"
+                    [ngClass]="{'text-[#54577A]' : this.scrolingCount === mentors.length}"
+                    (click)="scrollRight()"
+            >></button>
+          </div>
+        </div>
+
+        <div #scrollContainer class="boxes w-full flex gap-8 overflow-x-hidden">
+          <div #scrollabelItem class="box shrink-0 max-sm:w-full w-82 h-[140px] bg-white dark:bg-dark-component rounded-[10px] p-6 flex flex-col justify-between"
+               *ngFor="let mentor of mentors"
+          >
+            <div class="top flex items-center justify-between">
+              <div class="person flex gap-2">
+                <img src="/3.png" alt="" class="w-12 h-12 rounded-full">
+                <div class="text">
+                  <h4 class="text-semiBold-16 font-semibold">{{mentor.name}}</h4>
+                  <p class="text-medium-12 text-[#54577A]">{{mentor.position}}</p>
+                </div>
+              </div>
+              <a class="text-#546FFF">{{mentor.following ? 'Following' : "+ Follow"}}</a>
+            </div>
+
+            <div class="bottom flex items-center justify-between">
+              <p>{{mentor.countOfTasks}} Task</p>
+              <p>Star {{mentor.reviews}} ({{mentor.reviewsCount}} reviews)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="all-mentors h-full">
+        <h1 class="text-semiBold-24 font-semibold mt-8">Mentors</h1>
+
+          <div class="boxes mt-4 w-full grid grid-cols-3 max-xl:grid-cols-2 max-md:grid-cols-1 gap-y-8">
+            <div class="box w-[354px] h-[228px] max-md:w-full transition-ease flex flex-col justify-between bg-white dark:bg-dark-component p-6 rounded-[10px]"
+                 *ngFor="let mentor of mentors">
+              <div class="top flex items-center justify-between">
+                <div class="person flex items-center gap-2">
+                  <img src="/3.png" alt="" width="40px" height="40px" class="rounded-full bg-red-500">
+                  <div>
+                    <h3 class="text-semiBold-16 font-semibold">{{mentor.name}}</h3>
+                    <p class="text-medium-12">{{mentor.position}}</p>
+                  </div>
+                </div>
+                <p>Follow</p>
+              </div>♦
+
+              <div class="middle">
+                <p class="text-medium-14">{{mentor.about}}</p>
+              </div>
+
+              <div class="bottom flex items-center justify-between">
+                <p>{{mentor.countOfTasks}} Task</p>
+                <p>Star {{mentor.reviews}} ({{mentor.reviewsCount}} reviews)</p>
+              </div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

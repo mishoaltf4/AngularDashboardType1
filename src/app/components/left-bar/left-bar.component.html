@@ -1,5 +1,36 @@
-<div class="container">
-  <div class="left-bar w-[252px] h-screen max-h-[1024px] bg-white fixed z-10">
 
+  <div class="left-bar w-[252px] bg-white dark:bg-dark-component h-screen max-h-[1024px] flex flex-col fixed z-10 p-8">
+    <div class="logo flex items-center gap-3">
+      <img src="/icons/left-bar/book-square.svg" alt="">
+      <h1 class="text-semiBold-32 font-semibold">Nuegas</h1>
+    </div>
+
+    <nav class="w-full mt-15">
+      <ul class="flex flex-col gap-6 w-full">
+        <li *ngFor="let link of navigation"
+          [routerLink]="['/' + link.path]"
+            routerLinkActive="active-link"
+          [ngClass]="href === link.path ? 'active' : ''"
+            class="dark:hover:bg-dark-theme hover:bg-blue-500 text-[#8E92BC]"
+        >
+          <fa-icon [icon]="link.icon" size="lg" />
+          {{link.label}}
+        </li>
+      </ul>
+    </nav>
+
+    <div class="carder w-full h-[248px] bg-[#141522] mt-auto rounded-[10px]
+                relative p-4 flex flex-col items-center justify-between
+                before:absolute before:w-12 before:h-12 before:bg-[#141522]
+                before:rounded-full before:left-[70px] before:top-[-24px] before:border-5
+                before:border-white before:content-['?'] before:text-white before:text-xl
+                before:flex before:items-center before:justify-center">
+      <div class="text mt-[55px] text-white text-center flex flex-col gap-3">
+        <p class="text-semiBold-16 font-semibold">Help Center</p>
+        <p class="text-medium-12">Having Trouble in Learning.
+          Please contact us for more questions.</p>
+      </div>
+
+      <button class="w-full h-10 text-semiBold-12 font-semibold dark:bg-dark-component bg-white rounded-[10px]">Go To Help Center</button>
+    </div>
   </div>
-</div>

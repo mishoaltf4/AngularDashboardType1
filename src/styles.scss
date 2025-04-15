@@ -2,8 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
+  themes: light --default, dark;
 }
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @layer base  {
   *{
@@ -12,10 +14,13 @@
     box-sizing: border-box;
     font-family: "Plus Jakarta Sans", sans-serif;
   }
+
   .container{
-    max-width: 1440px;
-    width: 100%;
     margin: 0 auto;
+  }
+
+  button{
+    cursor: pointer;
   }
 }
 
@@ -26,12 +31,24 @@
   --text-medium-12: 12px;
   --text-medium-14: 14px;
   --text-medium-16: 16px;
+  --text-medium-18: 18px;
 
+  --text-semiBold-12: 12px;
+  --text-semiBold-14: 14px;
   --text-semiBold-16: 16px;
   --text-semiBold-20: 20px;
+  --text-semiBold-24: 24px;
   --text-semiBold-32: 32px;
+
+  --color-dark-component: #20262e;
+  --color-dark-theme: #1d232a;
 }
 
 body{
-  background-color: #F5F5F7;
+  overflow-x: hidden;
+}
+
+
+.active-link{
+  @apply bg-blue-500 dark:bg-dark-theme text-white dark:text-white
 }

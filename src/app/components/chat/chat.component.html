@@ -1,0 +1,49 @@
+<div class="chats w-full">
+  <div class="chat-top w-full h-25 bg-transparent dark:bg-dark-component px-12 py-6 flex justify-between">
+    <div class="person flex items-center gap-3">
+      <img src="/3.png" alt="" width="52px" height="52px" class="rounded-full bg-blue-500">
+      <div class="info flex flex-col gap-2">
+        <h3 class="text-semiBold-14 font-semibold">Angelie Crison</h3>
+        <p>Online</p>
+      </div>
+
+    </div>
+      <div class="call flex gap-6">
+        <fa-icon [icon]="faVideo" size="xl" class="w-13 h-13 cursor-pointer border rounded-full flex items-center justify-center text-[#8E92BC]"/>
+        <fa-icon [icon]="faPhone" size="xl" class="w-13 h-13 cursor-pointer border rounded-full flex items-center justify-center text-[#8E92BC]"/>
+      </div>
+  </div>
+
+    <div class="messiging px-8 py-10 flex flex-col gap-2 bg-[#F5F5F7] dark:bg-transparent">
+      <h4 class="text-center px-4 py-4">today</h4>
+      <div class="chat chat-end">
+        <div class="chat chat-bubble max-w:100 bg-blue-500 text-white">Morning Angelie, I have question about My Task</div>
+      </div>
+      <div class="chat chat-start">
+        <div class="chat chat-bubble max-w:100">Yes sure, Any problem with your assignment?</div>
+      </div>
+      <div class="chat chat-end">
+        <div class="chat chat-bubble max-w:100 bg-blue-500 text-white">How to make a responsive display from the dashboard?</div>
+      </div>
+      <div class="chat chat-end">
+        <div class="chat chat-bubble max-w:100 bg-blue-500 text-white">Is there a plugin to do this task?</div>
+      </div>
+      <div class="chat chat-start">
+        <div class="chat chat-bubble max-w:100">No plugins. You just have to make it smaller according to the size of the phone.</div>
+      </div>
+      <div class="chat chat-start">
+        <div class="chat chat-bubble max-w:100">Thank you very much. I'm glad you asked about the assignment</div>
+      </div>
+    </div>
+
+  <div class="bottom px-6 w-full h-20 dark:bg-dark-component flex items-center justify-between">
+    <input type="text"
+           placeholder="send your message..."
+           class="w-4/5 h-10"
+    >
+    <div class="icons flex items-center gap-8">
+      <fa-icon [icon]="faPaperclip" size="xl"/>
+      <button class="w-11 h-11 bg-[#546FFF] text-white rounded-[10px]"><fa-icon [icon]="faPaperPlane"/></button>
+    </div>
+  </div>
+</div>

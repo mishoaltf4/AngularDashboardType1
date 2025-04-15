@@ -1,4 +1,4 @@
-<div class="dashboard mt-[40px] max-sm:bg-white bg-[#FAFAFA]">
+<div class="dashboard dark:bg-transparent mt-[40px] max-sm:bg-white bg-[#FAFAFA]">
   <div class="max-sm:max-w-[80%] container">
     <div class="dashboard-inner w-full grid  justify-between grid-cols-1 lg:grid-cols-[1fr_372px] grid-rows-1 gap-[32px]">
       <ng-container *ngIf="isLoading">
@@ -23,7 +23,7 @@
               </div>
             </div>
 
-            <div class="activity xl:w-[50%] w-full max-sm:bg-[#F5F5F7] p-[20px]">
+            <div class="activity xl:w-[50%] w-full bg-transparent p-[20px]">
               <div class="text flex items-center justify-between">
                 <div class="skeleton w-[55px] h-[25px] text-skeleton-dark"></div>
                 <div class="skeleton w-[55px] h-[25px] text-skeleton-light"></div>
@@ -138,13 +138,13 @@
               </div>
             </div>
 
-            <div class="activity xl:w-[50%] w-full max-sm:bg-[#F5F5F7] p-[20px]">
+            <div class="activity xl:w-[50%] w-full p-[20px]">
               <div class="text flex items-center justify-between">
                 <h4 class="text-semibold-16 font-semibold">Activity</h4>
                 <p class="text-medium-12">This Week </p>
               </div>
 
-              <div class="chart w-full h-[130px] bg-white mt-4 rounded-lg">
+              <div class="chart dark:bg-dark-component w-full h-[130px] bg-white mt-4 rounded-lg">
 
               </div>
             </div>
@@ -197,7 +197,7 @@
               <h2 class="text-semiBold-20 font-semibold">Upcoming Task</h2>
             </div>
 
-            <div class="box max-sm:w-full w-[45%] p-[20px] bg-white flex flex-col gap-[16px]">
+            <div class="box dark:bg-dark-component max-sm:w-full w-[45%] p-[20px] bg-white flex flex-col gap-[16px]">
               <div class="img w-full h-[110px] rounded-[10px] bg-red-500"></div>
 
               <div class="content flex flex-col gap-[16px]">
@@ -223,7 +223,7 @@
                 </div>
               </div>
             </div>
-            <div class="box max-sm:hidden w-[45%] p-[20px] bg-white flex flex-col gap-[16px]">
+            <div class="box dark:bg-dark-component max-sm:hidden w-[45%] p-[20px] bg-white flex flex-col gap-[16px]">
               <div class="img w-full h-[110px] rounded-[10px] bg-red-500"></div>
 
               <div class="content flex flex-col gap-[16px]">
@@ -252,8 +252,72 @@
           </div>
         </div>
 
-        <div class="right-side w-full h-full">
+        <div class="right-side w-full h-full flex flex-col gap-8 lg:p-6">
+          <div class="calendar w-full h-30 bg-white dark:bg-dark-component">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, tenetur?</p>
+          </div>
 
+          <div class="today-task w-full bg-white dark:bg-dark-component p-6 flex flex-col gap-8">
+            <div class="title flex items-center justify-between">
+              <p class="text-semiBold-14 font-semibold">Task Today</p>
+              <p class="text-semiBold-32 font-semibold">...</p>
+            </div>
+
+            <div class="top-box w-full flex flex-col gap-5">
+              <img src="/imgs/dashboard/task-daily.png" alt="" class="rounded-[10px] h-40">
+              <div class="text">
+                <p class="text-semiBold-16 font-semibold">Creating Awesome Mobile Apps</p>
+                <p class="text-medium-12 text-[#54577A]">UI /UX Designer</p>
+              </div>
+
+              <div class="progression">
+                <div class="flex items-center justify-between">
+                  <p>Progress</p>
+                  <p>70%</p>
+                </div>
+                <progress class="progress progress-info w-full" value="70" max="100"></progress>
+              </div>
+
+              <div class="time-people flex items-center justify-between">
+                <p class="text-medium-16">1 Hour</p>
+                <div class="people flex">
+                  <div class="box w-[24px] h-[24px] rounded-full bg-red-500 border-white border-2 ml-0"></div>
+                  <div class="box w-[24px] h-[24px] rounded-full bg-red-500 border-white border-2 ml-[-10px]"></div>
+                  <div class="box w-[24px] h-[24px] rounded-full bg-red-500 border-white border-2 ml-[-10px]"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-full h-[1px] bg-[#F5F5F7]"></div>
+
+            <div class="bottom-box w-full flex flex-col gap-5">
+              <div class="title flex items-center justify-between">
+                <p class="text-semiBold-16 font-semibold">Detail Task</p>
+                <p class="text-medium-12 text-[#54577A]">UI / UX Designer</p>
+              </div>
+
+              <nav>
+                <ul class="text-semiBold-14 font-semibold flex flex-col gap-5">
+                  <li class="flex items-center gap-[4px]">
+                    <p class="w-9 h-9 bg-[#F5F5F7] dark:bg-dark-component rounded-[10px] flex items-center justify-center">1</p>
+                    Understanding the tools in Figma
+                  </li>
+                  <li class="flex items-center gap-[4px]">
+                    <p class="w-9 h-9 bg-[#F5F5F7] dark:bg-dark-component rounded-[10px] flex items-center justify-center">2</p>
+                    Understand the basics of making designs
+                  </li>
+                  <li class="flex items-center gap-[4px]">
+                    <p class="w-9 h-9 bg-[#F5F5F7] dark:bg-dark-component rounded-[10px] flex items-center justify-center">3</p>
+                    Design a mobile application with figma
+                  </li>
+                </ul>
+              </nav>
+
+              <button class="bg-[#546FFF] w-full h-11 mt-8 rounded-[10px] text-white text-semiBold-14 font-semibold">
+                Go To Detail
+              </button>
+            </div>
+          </div>
         </div>
       </ng-container>
 

@@ -1,13 +1,36 @@
-<header class="h-[108px] border-b-1 max-sm:bg-white">
+<header class="2xl:ml-[252px] bg-white dark:bg-dark-component max-sm:bg-white" [ngClass]="this.href !== 'dashboard' ? 'bg-white' : 'bg-transparent'">
   <div class="container max-sm:max-w-[80%]">
-    <div class="header-inner h-[108px] flex items-center justify-end gap-4">
-      <div class="circle max-sm:h-[44px] max-sm:w-[44px] h-[54px] w-[54px] border-2 rounded-full flex justify-center items-center">
-        <fa-icon [icon]="faBellConcierge" size="2x" class="skeleton text-skeleton-dark" *ngIf="isLoading" />
+    <div class="header-inner w-full flex flex-col  gap-6 lg:p-8 py-8">
+      <div class="header-top flex justify-between">
+        <div class="text">
+          <ng-container *ngIf="href === 'dashboard'">
+            <p class="text-semiBold-24 text-semibold">Hi, Skylar Dias</p>
+            <p class="text-medium-16">Let's finish your task today!</p>
+          </ng-container>
+          <ng-container *ngIf="href !== 'dashboard'">
+            <p class="text-semiBold-24 text-semibold">Explore {{href}}</p>
+          </ng-container>
+        </div>
+        <div class="end flex items-center gap-3">
+          <div class="circle max-sm:h-[44px] max-sm:w-[44px] h-[54px] w-[54px] border rounded-full flex justify-center items-center">
+            <fa-icon [icon]="faBell" size="2x" class="text-skeleton-light" *ngIf="isLoading" />
 
-        <fa-icon [icon]="faBell" size="2x" *ngIf="!isLoading" />
+            <fa-icon [icon]="faBell" size="2x" *ngIf="!isLoading" />
 
+          </div>
+          <img src="/3.png" width="54px" height="54px" alt class="circle max-sm:h-[44px] max-sm:w-[44px] rounded-full flex justify-center items-center" />
+        </div>
       </div>
-      <div class="circle max-sm:h-[44px] max-sm:w-[44px] h-[54px] w-[54px] border-2 rounded-full flex justify-center items-center"></div>
+
+      <ng-container *ngIf="href !== 'dashboard'">
+        <div class="header-bottom w-full flex flex-wrap items-center justify-between max-xl:hidden">
+          <input type="text" class="max-lg:w-full w-120 h-13 text-semiBold-16 font-semibold border border-[#575757] px-6 py-3 rounded-[10px]" placeholder="Search  Task">
+          <div class="sort flex items-center flex-wrap gap-6">
+            <button class="h-13 px-7 text-semiBold-12 font-semibold border rounded-[10px] border-[#F5F5F7]">Category</button>
+            <button class="h-13 px-7 text-semiBold-12 font-semibold border rounded-[10px] border-[#F5F5F7]">Sort By : Deadline</button>
+          </div>
+        </div>
+      </ng-container>
     </div>
   </div>
 </header>
